@@ -16,4 +16,5 @@ while (True):
         get_temp()
     except KeyboardInterrupt:
         print("exiting gracefully")
-        sense.clear
+        sense.clear()
+        exit()
