@@ -4,6 +4,17 @@ from sense_hat import SenseHat
 
 sense = SenseHat()
 
+wall = [
+    0, 0, 0, 0, 0, 1, 0, 0,
+    0, 0, 0, 0, 0, 1, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 1, 0, 0,
+    0, 0, 0, 0, 0, 1, 0, 0,
+    0, 0, 0, 0, 0, 1, 0, 0,
+]
+
 def get_temp():
     t = sense.temp
     temp = 0.0 if not isinstance(t, (int, float)) else float(t)
@@ -13,7 +24,7 @@ def get_temp():
 
 while (True):
     try:
-        get_temp()
+        sense.set_pixels(wall)
     except KeyboardInterrupt:
         print("exiting gracefully")
         sense.clear()
